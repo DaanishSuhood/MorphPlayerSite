@@ -3,7 +3,7 @@
 The website for [MorphPlayer](https://github.com/DaanishSuhood/MorphPlayer) (Windows),
 [MorphPlayerTV](https://github.com/DaanishSuhood/MorphPlayerTV) (Android TV) and
 [MorphPlayerMobile](https://github.com/DaanishSuhood/MorphPlayerMobile) (Android phones and tablets): one static
-page, hosted on Netlify. No build step, no frameworks, no web fonts, no analytics.
+page, hosted on Netlify at <https://morphplayer.netlify.app>. No build step, no frameworks, no web fonts, no analytics.
 
 Last updated: 23 November 2026
 
