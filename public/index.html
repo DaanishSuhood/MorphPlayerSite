@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MorphPlayer: media player for Windows, Android TV and Android</title>
+<meta name="description" content="MorphPlayer plays almost any video or audio file, on Windows, Android TV and Android phones. Built on LibVLC, free and open source (MIT).">
+<meta name="theme-color" content="#101010">
+<meta property="og:title" content="MorphPlayer">
+<meta property="og:description" content="Plays almost any video or audio file, on Windows, Android TV and Android phones. Free and open source.">
+<meta property="og:image" content="/og.png">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/styles.css">
+<script src="/look.js"></script>
+<script src="/app.js" defer></script>
+</head>
+<body>
+<!-- The logo's colours (desktop MorphPlayer's icon), shared by the drawings below. -->
+<svg width="0" height="0" class="defs" aria-hidden="true">
+  <defs>
+    <linearGradient id="logo-gradient" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FFB000"/><stop offset="1" stop-color="#E85400"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="top">
+  <div class="wrap top-row">
+    <a class="brand" href="#">
+      <img src="/favicon.svg" alt="" width="28" height="28">
+      <span>MorphPlayer</span>
+    </a>
+    <nav class="top-nav" aria-label="Sections">
+      <a href="#windows">Windows</a>
+      <a href="#tv">Android TV</a>
+      <a href="#phone">Phone</a>
+      <a href="#faq">Questions</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-text">
+      <h1>Plays almost anything. <span class="accent">On every screen you own.</span></h1>
+      <p class="lead">MorphPlayer is a media player built on LibVLC, the engine behind VLC. MKV, MP4, AVI, WebM, FLAC,
+        MP3, Opus, HLS and RTSP streams: it plays them on Windows, on Android TV and on Android phones, with the same
+        subtitle matching, resume and themes on each.</p>
+      <div class="hero-buttons">
+        <a class="button" href="#get">Download</a>
+        <a class="button ghost" href="https://github.com/DaanishSuhood/MorphPlayer">Source on GitHub</a>
+      </div>
+      <p class="small dim">Free and open source (MIT). No ads, no account, no tracking.</p>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 520 360" class="devices">
+        <!-- TV -->
+        <rect x="150" y="10" width="360" height="214" rx="10" class="frame"/>
+        <rect x="160" y="20" width="340" height="194" rx="4" class="screen"/>
+        <rect x="176" y="40" width="86" height="54" rx="6" class="tile accent-fill"/>
+        <rect x="270" y="40" width="86" height="54" rx="6" class="tile"/>
+        <rect x="364" y="40" width="86" height="54" rx="6" class="tile"/>
+        <rect x="176" y="112" width="86" height="54" rx="6" class="tile"/>
+        <rect x="270" y="112" width="86" height="54" rx="6" class="tile"/>
+        <rect x="364" y="112" width="86" height="54" rx="6" class="tile"/>
+        <rect x="176" y="184" width="150" height="6" rx="3" class="track-ui"/>
+        <rect x="300" y="224" width="60" height="14" class="frame"/>
+        <!-- Laptop window -->
+        <rect x="10" y="120" width="300" height="190" rx="8" class="frame"/>
+        <rect x="18" y="128" width="284" height="164" rx="3" class="video"/>
+        <path d="M18 250 h284 v42 h-284 z" class="bar"/>
+        <rect x="34" y="262" width="252" height="4" rx="2" class="track"/>
+        <rect x="34" y="262" width="150" height="4" rx="2" class="accent-fill"/>
+        <circle cx="184" cy="264" r="6" class="accent-fill"/>
+        <path d="M150 276 l0 10 l9 -5 z" class="ink"/>
+        <circle cx="160" cy="190" r="26" class="logo-disc"/>
+        <path d="M153 178 v24 l20 -12 z" fill="#fff"/>
+        <rect x="-4" y="310" width="328" height="12" rx="6" class="frame"/>
+        <!-- Phone -->
+        <rect x="380" y="150" width="120" height="206" rx="16" class="frame"/>
+        <rect x="388" y="160" width="104" height="186" rx="9" class="screen"/>
+        <rect x="402" y="178" width="76" height="76" rx="8" class="tile"/>
+        <circle cx="434" cy="228" r="8" class="accent-fill"/><rect x="438" y="194" width="4" height="34" class="accent-fill"/><path d="M438 194 h14 v9 h-14 z" class="accent-fill"/>
+        <rect x="402" y="266" width="60" height="6" rx="3" class="ink-dim"/>
+        <rect x="402" y="278" width="40" height="5" rx="2.5" class="tile"/>
+        <rect x="402" y="300" width="76" height="4" rx="2" class="track-ui"/>
+        <rect x="402" y="300" width="30" height="4" rx="2" class="accent-fill"/>
+        <circle cx="440" cy="324" r="10" class="accent-fill"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section id="get" class="section">
+  <div class="wrap">
+    <h2>Pick your screen</h2>
+    <p class="section-lead">Three apps, one player. Each is installed from its GitHub release and updates itself.</p>
+    <div class="cards">
+
+      <article class="card" data-repo="MorphPlayer">
+        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M3 3h18a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm0 5v11h18V8zm2-3.5a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm3 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/></svg></div>
+        <h3>MorphPlayer</h3>
+        <p class="card-for">for Windows 10 and 11</p>
+        <ul class="ticks">
+          <li>YouTube and other website links, up to 4K</li>
+          <li>Playlist with thumbnails, seek bar previews</li>
+          <li>Keyboard shortcuts for everything</li>
+        </ul>
+        <div class="card-buttons">
+          <a class="button" data-asset="Setup.*\.exe$" href="https://github.com/DaanishSuhood/MorphPlayer/releases/latest">Installer</a>
+          <a class="button ghost" data-asset="portable\.zip$" href="https://github.com/DaanishSuhood/MorphPlayer/releases/latest">Portable zip</a>
+        </div>
+        <p class="release small dim">Latest release on GitHub</p>
+        <a class="more" href="#windows">More about the Windows app</a>
+      </article>
+
+      <article class="card" data-repo="MorphPlayerTV">
+        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M21 3H3a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h5v2h8v-2h5a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zm0 14H3V5h18z"/></svg></div>
+        <h3>MorphPlayerTV</h3>
+        <p class="card-for">for Android TV and Google TV 7.0+</p>
+        <ul class="ticks">
+          <li>Films and music from USB drives</li>
+          <li>Made for the remote: no mouse needed</li>
+          <li>Send a link from your phone with a QR code</li>
+        </ul>
+        <div class="card-buttons">
+          <a class="button" data-asset="\.apk$" href="https://github.com/DaanishSuhood/MorphPlayerTV/releases/latest">Download APK</a>
+        </div>
+        <p class="release small dim">Latest release on GitHub</p>
+        <a class="more" href="#tv">More about the TV app</a>
+      </article>
+
+      <article class="card" data-repo="MorphPlayerMobile">
+        <div class="card-icon"><svg viewBox="0 0 24 24"><path d="M16 1H8a3 3 0 0 0-3 3v16a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V4a3 3 0 0 0-3-3zm-2 20h-4v-1h4zm3.25-3H6.75V4h10.5z"/></svg></div>
+        <h3>MorphPlayerMobile</h3>
+        <p class="card-for">for Android phones and tablets 8.0+</p>
+        <ul class="ticks">
+          <li>Swipe for volume, brightness and seeking</li>
+          <li>Music keeps playing with the screen off</li>
+          <li>Picture-in-picture for videos</li>
+        </ul>
+        <div class="card-buttons">
+          <a class="button" data-asset="\.apk$" href="https://github.com/DaanishSuhood/MorphPlayerMobile/releases/latest">Download APK</a>
+        </div>
+        <p class="release small dim">Latest release on GitHub</p>
+        <a class="more" href="#phone">More about the phone app</a>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="wrap">
+    <h2>The same player everywhere</h2>
+    <p class="section-lead">The three apps share their rules, so a film behaves the same on the laptop, the TV and the phone.</p>
+    <div class="features">
+      <div class="feature">
+        <h3>Plays almost anything</h3>
+        <p>LibVLC does the decoding, so there are no codec packs to install. Hardware decoding handles 4K and HEVC
+          smoothly on TV boxes and phones.</p>
+      </div>
+      <div class="feature">
+        <h3>Finds your subtitles</h3>
+        <p>Not just <code>Movie.en.srt</code>: subtitles from another release of the same film, <code>1x02</code> for
+          <code>S01E02</code>, or a <code>Subs</code> folder. All found, named by language, and the best one turned on.</p>
+      </div>
+      <div class="feature">
+        <h3>Carries on where you left off</h3>
+        <p>Files longer than 3 minutes start where you stopped, with <b>Start over</b> on offer. Positions near
+          either end aren't kept, as in VLC.</p>
+      </div>
+      <div class="feature">
+        <h3>Folders become playlists</h3>
+        <p>Open a file and the rest of its folder plays after it, in the order you'd expect: Episode 2 before
+          Episode 10. Shuffle plays everything once before repeating.</p>
+      </div>
+      <div class="feature">
+        <h3>Tracks, speed and sound</h3>
+        <p>Audio and subtitle tracks by language, 0.25× to 4× with the pitch kept, and stereo modes including a
+          headphone mix of 5.1 and 7.1 sound.</p>
+      </div>
+      <div class="feature">
+        <h3>Your colours</h3>
+        <p>Six themes and eight accent colours, the same in all three apps. Try them on this page:</p>
+        <div class="picker" aria-label="Theme and accent colour">
+          <div class="picker-row" id="theme-picker" role="radiogroup" aria-label="Theme"></div>
+          <div class="picker-row" id="accent-picker" role="radiogroup" aria-label="Accent colour"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="windows" class="section">
+  <div class="wrap detail">
+    <div>
+      <p class="eyebrow">Windows</p>
+      <h2>MorphPlayer for Windows</h2>
+      <p>A minimal window with an auto-hiding control bar, a playlist panel and a right-click menu for everything
+        else. Drop files or folders on it to play them.</p>
+      <ul class="ticks">
+        <li><b>Website links</b>: paste a YouTube link (or any site yt-dlp supports) and it streams, at the quality
+          you choose, from 360p to 4K. MorphPlayer fetches yt-dlp and keeps it up to date.</li>
+        <li><b>Playlist thumbnails</b> from posters beside your files, covers inside them, or a frame from the video.</li>
+        <li><b>Seek bar previews</b>: hover over the bar to see the frame there.</li>
+        <li><b>Audio devices</b>: switch between speakers, headphones and Bluetooth without stopping.</li>
+        <li><b>One window</b>: files opened from Explorer join the window that's already open.</li>
+      </ul>
+      <p class="small dim">Windows 10 or 11, 64-bit. Nothing else to install: no .NET, no VLC. The installer or the
+        portable zip, as you prefer.</p>
+    </div>
+    <div class="detail-art" aria-hidden="true">
+      <svg viewBox="0 0 400 260">
+        <rect x="0" y="0" width="400" height="260" rx="10" class="frame"/>
+        <rect x="0" y="0" width="400" height="26" rx="10" class="bar"/>
+        <circle cx="372" cy="13" r="4" class="ink-dim"/><circle cx="356" cy="13" r="4" class="ink-dim"/>
+        <rect x="8" y="34" width="272" height="218" rx="4" class="video"/>
+        <rect x="288" y="34" width="104" height="218" rx="4" class="screen"/>
+        <rect x="296" y="44" width="34" height="22" rx="3" class="accent-fill"/><rect x="336" y="48" width="48" height="5" rx="2.5" class="ink-dim"/><rect x="336" y="58" width="30" height="4" rx="2" class="tile"/>
+        <rect x="296" y="76" width="34" height="22" rx="3" class="tile"/><rect x="336" y="80" width="48" height="5" rx="2.5" class="tile"/><rect x="336" y="90" width="30" height="4" rx="2" class="tile"/>
+        <rect x="296" y="108" width="34" height="22" rx="3" class="tile"/><rect x="336" y="112" width="48" height="5" rx="2.5" class="tile"/><rect x="336" y="122" width="30" height="4" rx="2" class="tile"/>
+        <rect x="296" y="140" width="34" height="22" rx="3" class="tile"/><rect x="336" y="144" width="48" height="5" rx="2.5" class="tile"/><rect x="336" y="154" width="30" height="4" rx="2" class="tile"/>
+        <path d="M8 212 h272 v40 h-272 z" class="bar"/>
+        <rect x="20" y="222" width="248" height="4" rx="2" class="track"/>
+        <rect x="20" y="222" width="96" height="4" rx="2" class="accent-fill"/>
+        <rect x="96" y="194" width="40" height="24" rx="3" fill="#3A3A3A"/>
+        <circle cx="116" cy="224" r="6" class="accent-fill"/>
+        <path d="M138 234 l0 10 l9 -5 z" class="ink"/>
+        <rect x="200" y="236" width="24" height="8" rx="2" class="accent-fill"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section id="tv" class="section alt">
+  <div class="wrap detail">
+    <div>
+      <p class="eyebrow">Android TV</p>
+      <h2>MorphPlayerTV</h2>
+      <p>For Android TV and Google TV boxes, such as the Xiaomi Mi Box. Plug in a USB drive, pick a film, and its
+        folder becomes the playlist.</p>
+      <ul class="ticks">
+        <li><b>Made for the remote</b>: OK pauses, left and right seek (further the longer you hold), Menu opens the options.</li>
+        <li><b>Send a link from your phone</b>: the home screen shows an address and a QR code; open it on your phone,
+          paste a stream link, and it plays on the TV.</li>
+        <li><b>Continue watching</b> on the home screen, with how far you got.</li>
+        <li><b>Audio passthrough</b> sends Dolby and DTS untouched to a soundbar or receiver.</li>
+        <li><b>Films keep their shape</b>: black bars stay where they belong, even on boxes whose decoders report the
+          wrong size.</li>
+      </ul>
+      <p class="small dim">Android TV 7.0 or later, 32-bit and 64-bit ARM. Install it with the free
+        <b>Downloader</b> app; see below.</p>
+    </div>
+    <div class="detail-art" aria-hidden="true">
+      <svg viewBox="0 0 400 260">
+        <rect x="0" y="0" width="400" height="236" rx="10" class="frame"/>
+        <rect x="10" y="10" width="380" height="216" rx="4" class="screen"/>
+        <circle cx="34" cy="34" r="9" class="logo-disc"/><path d="M31 29 v10 l8 -5 z" fill="#fff"/>
+        <rect x="50" y="30" width="80" height="8" rx="4" class="ink-dim"/>
+        <rect x="26" y="58" width="92" height="56" rx="7" class="tile accent-outline"/>
+        <rect x="128" y="58" width="92" height="56" rx="7" class="tile"/>
+        <rect x="230" y="58" width="92" height="56" rx="7" class="tile"/>
+        <rect x="26" y="128" width="92" height="56" rx="7" class="tile"/>
+        <rect x="36" y="170" width="72" height="3" rx="1.5" class="track-ui"/><rect x="36" y="170" width="40" height="3" rx="1.5" class="accent-fill"/>
+        <rect x="128" y="128" width="92" height="56" rx="7" class="tile"/>
+        <rect x="26" y="196" width="150" height="20" rx="5" class="tile"/>
+        <rect x="320" y="150" width="56" height="56" rx="4" fill="#fff"/>
+        <path d="M326 156h14v14h-14zM356 156h14v14h-14zM326 186h14v14h-14zM346 176h6v6h-6zM358 188h8v8h-8zM344 160h6v8h-6z" fill="#111"/>
+        <rect x="170" y="236" width="60" height="14" class="frame"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section id="phone" class="section">
+  <div class="wrap detail">
+    <div>
+      <p class="eyebrow">Android phones and tablets</p>
+      <h2>MorphPlayerMobile</h2>
+      <p>The same player with a touch interface. Your videos and music are found wherever they are, in Camera,
+        Download, WhatsApp or a memory card, and listed by folder.</p>
+      <ul class="ticks">
+        <li><b>Gestures</b>: double-tap the sides to skip 10 seconds, swipe for brightness, volume and seeking, pinch
+          to fill the screen, and a lock for when it's in a pocket.</li>
+        <li><b>Music in the background</b>, with lock-screen and headset controls and a mini player.</li>
+        <li><b>Picture-in-picture</b>: leave the app and the video shrinks into a small window.</li>
+        <li><b>Turns to suit the video</b>: films sideways, upright videos upright.</li>
+        <li><b>Open with and Share</b> from your file manager, or a message with a stream link in it.</li>
+      </ul>
+      <p class="small dim">Android 8.0 or later, 32-bit and 64-bit ARM.</p>
+    </div>
+    <div class="detail-art phone-art" aria-hidden="true">
+      <svg viewBox="0 0 400 260">
+        <rect x="40" y="30" width="320" height="180" rx="22" class="frame"/>
+        <rect x="52" y="40" width="296" height="160" rx="12" class="video"/>
+        <rect x="52" y="40" width="296" height="20" rx="8" class="bar"/>
+        <path d="M60 50 l6 -5 v10 z" class="ink"/>
+        <rect x="74" y="47" width="90" height="6" rx="3" class="ink-dim"/>
+        <circle cx="160" cy="120" r="14" class="ink-dim" opacity=".5"/>
+        <circle cx="200" cy="120" r="20" class="accent-fill"/>
+        <path d="M194 110 v20 l16 -10 z" fill="#fff"/>
+        <circle cx="240" cy="120" r="14" class="ink-dim" opacity=".5"/>
+        <rect x="70" y="178" width="260" height="4" rx="2" class="track"/>
+        <rect x="70" y="178" width="120" height="4" rx="2" class="accent-fill"/>
+        <circle cx="190" cy="180" r="6" class="accent-fill"/>
+        <rect x="80" y="74" width="12" height="70" rx="6" class="tile"/>
+        <rect x="80" y="104" width="12" height="40" rx="6" class="accent-fill"/>
+        <path d="M300 84 a20 20 0 0 1 0 40" fill="none" class="ink-stroke"/>
+        <path d="M310 74 a32 32 0 0 1 0 60" fill="none" class="ink-stroke"/>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="section alt">
+  <div class="wrap">
+    <h2>Installing</h2>
+    <p class="section-lead">The apps aren't in the Microsoft Store or Google Play; they come straight from their GitHub releases. Each one then offers its own updates, checked against published SHA-256 checksums.</p>
+    <div class="steps-grid">
+      <div class="steps">
+        <h3>Windows</h3>
+        <ol>
+          <li>Download the installer above and run it.</li>
+          <li>MorphPlayer isn't code-signed, so SmartScreen may warn you: choose <b>More info → Run anyway</b>.</li>
+          <li>To open videos by double-clicking, pick MorphPlayer in <b>Settings → Apps → Default apps</b>.</li>
+        </ol>
+      </div>
+      <div class="steps">
+        <h3>Android TV</h3>
+        <ol>
+          <li>On the box, install <b>Downloader</b> (by AFTVnews) from the Play Store.</li>
+          <li>In Downloader, enter the APK's address from the TV card above, and allow it to install apps when asked.</li>
+          <li>Open <b>MorphPlayerTV</b> from the apps row.</li>
+        </ol>
+      </div>
+      <div class="steps">
+        <h3>Phone or tablet</h3>
+        <ol>
+          <li>Open this page on the phone and tap <b>Download APK</b>.</li>
+          <li>Open the download, and allow your browser to install apps when Android asks.</li>
+          <li>Open <b>MorphPlayer</b> from your apps.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq" class="section">
+  <div class="wrap narrow">
+    <h2>Questions</h2>
+    <details>
+      <summary>Is it really free?</summary>
+      <p>Yes. All three apps are open source under the MIT licence, with no ads, accounts, tracking or paid
+        features. On their own, they only ask GitHub once a day whether a newer release is out (and the Windows
+        app updates yt-dlp), which you can turn off.</p>
+    </details>
+    <details>
+      <summary>Why isn't it in the Play Store?</summary>
+      <p>It's a personal project, installed from its releases. Google Play also restricts two things the apps
+        rely on: All files access, which is how subtitle files beside your videos are found, and updating
+        themselves.</p>
+    </details>
+    <details>
+      <summary>Why can't the Android apps play YouTube links?</summary>
+      <p>The libraries that read YouTube on Android are under the GPL licence, which would rule out the apps'
+        MIT licence. The Windows app plays them through yt-dlp, a separate program it downloads for you.</p>
+    </details>
+    <details>
+      <summary>Why doesn't Android show my subtitle files to the app?</summary>
+      <p>With only the media permission, Android shows an app videos and music and hides every other file. Give
+        the app <b>All files access</b> when it asks (on many TV boxes this needs one adb command, shown in the
+        app), or add a subtitle file by hand from the subtitles menu on the phone.</p>
+    </details>
+    <details>
+      <summary>Is it VLC?</summary>
+      <p>It uses LibVLC, VLC's playback engine, so it plays what VLC plays. Everything around the engine is
+        MorphPlayer's own. MorphPlayer isn't made or endorsed by VideoLAN.</p>
+    </details>
+    <details>
+      <summary>Where do I report a problem?</summary>
+      <p>Open an issue on the app's GitHub page:
+        <a href="https://github.com/DaanishSuhood/MorphPlayer/issues">Windows</a>,
+        <a href="https://github.com/DaanishSuhood/MorphPlayerTV/issues">Android TV</a> or
+        <a href="https://github.com/DaanishSuhood/MorphPlayerMobile/issues">phone</a>.</p>
+    </details>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-row">
+    <p>MorphPlayer, MorphPlayerTV and MorphPlayerMobile are MIT-licensed. They play with
+      <a href="https://www.videolan.org/vlc/libvlc.html">LibVLC</a> (LGPL 2.1).
+      VLC and VideoLAN are trademarks of VideoLAN, which isn't connected with this project.</p>
+    <p class="foot-links">
+      <a href="https://github.com/DaanishSuhood/MorphPlayer">MorphPlayer</a>
+      <a href="https://github.com/DaanishSuhood/MorphPlayerTV">MorphPlayerTV</a>
+      <a href="https://github.com/DaanishSuhood/MorphPlayerMobile">MorphPlayerMobile</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
